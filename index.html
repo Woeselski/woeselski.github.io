@@ -111,9 +111,9 @@
 
         files.forEach(file => {
             const a = document.createElement("a");
-            a.href = file
+            a.href = file;
             a.download = file;
-            document.body.appendChild;
+            document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
         });
