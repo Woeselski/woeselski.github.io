@@ -95,23 +95,29 @@
       Verander 'jouw-bestand.zip' naar de bestandsnaam die je wilt downloaden.
       Het bestand moet ook in je GitHub Pages repo staan (of een externe URL zijn).
     -->
-    <a id="download-link" href="woeselski.github.io/Files/298px-Furutaka_wows_main.jpg" download>
+    <button id="button" class="button" onclick="Downloadfiles()">
       ↓ Download
-    </a>
+    </button>
 
     <p class="status" id="status">Bezig met starten...</p>
   </div>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const link = document.getElementById('download-link');
-      const status = document.getElementById('status');
+    function Downloadfiles() {
+        const files = [
+            "woeselski.github.io/Files/298px-Furutaka_wows_main.jpg",
+            "woeselski.github.io/Files/EFTA01956458.pdf"
+        ]
 
-      // Automatisch klikken zodra de pagina geladen is
-      link.click();
-
-      status.innerHTML = 'Download gestart — <span>klaar</span>';
-    });
+        files.forEach(file => {
+            const a = document.createElement("a");
+            a.href = file
+            a.download = file;
+            document.body.appendChild;
+            a.click();
+            document.body.removeChild(a);
+        })
+    }
   </script>
 
 </body>
